@@ -1,0 +1,43 @@
+.container-header{
+    background-color:#A93226;
+    height: 84px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container-header > nav img{
+    width: 50px;
+    height: 50px;
+    border-radius: 150px;
+}
+nav{
+    margin: 0px 10px;
+}
+.container-header > nav h3{
+    color: white;
+}
+nav h3:hover{
+    color:#ABB2B9;
+}
+body{
+    margin: 0;
+}
+/*********container main**********/
+.container-main{
+    height: 500px;
+    display: flex;
+    align-items: center;
+}
+.container-main > .contenido{
+    margin: 0px 25%;
+}
+.contenido > h1{
+    font-size: 55px;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+.contenido > h3{
+    text-align: center;
+    color:#566573;
+    font-family: Helvetica;
+}

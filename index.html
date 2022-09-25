@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicacion Crud</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container-header">
+            <nav><a href="/"><img src="https://aysbordados.com/wp-content/uploads/2020/10/kanji-kame-tortuga-dragon-ball.jpg" alt="logo"></a></nav>
+            <nav><h3>Proyecto No.2: Desarrollo de Software CRUD</h3></nav>
+        </div>
+    </header>
+    <main>
+        <div class="container-main">
+            <div class="contenido">
+                <h1>¿QUE SIGNIFICA CRUD?</h1>
+                <h3>Es un proceso de software que nos permite manipular datos, utilizando la persistencia.</h3>
+                <h3>A continuación, verás un ejemplo de un listado de tareas, el cual te permitirá agregar, modificar, borrar y leer pendientes que tengas.</h3>
+                <h3>Ten la libertad de usarlo a tu conveniencia.</h3>
+            </div>
+        </div>
+    </main>
+    <section>
+        <div class="container-section">
+            <div class="contenido-section">
+                <form id="formulario">
+                    <h2>Tipo de Juego</h2>
+                    <input type="text" id="inputJuegos" name="name" placeholder="introduce el juego">
+                    <h2>Descripcion</h2>
+                    <input type="text" id="inputDescription"  name="descripcion" placeholder="introduce la descripcion" >
+                    
+                    <button type="button" id="Agregar" onclick="buttonAgregar">Agregar tarea</button>
+                    <!-- <button onclick="Agregar()">Agregar tarea</button> -->
+                    <div id="estado"></div>
+                </form>
+                <div class="container-column">
+                    <div id="listaProducto">
+    
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="index.js" type="text/javascript"></script>
+</body>
+</html>
