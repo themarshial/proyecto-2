@@ -28,18 +28,35 @@
         <div class="container-section">
             <div class="contenido-section">
                 <form id="formulario">
-                    <h2>Tipo de Juego</h2>
-                    <input type="text" id="inputJuegos" name="name" placeholder="introduce el juego">
-                    <h2>Descripcion</h2>
-                    <input type="text" id="inputDescription"  name="descripcion" placeholder="introduce la descripcion" >
-                    
-                    <button type="button" id="Agregar" onclick="buttonAgregar">Agregar tarea</button>
-                    <!-- <button onclick="Agregar()">Agregar tarea</button> -->
+                    <h2>Lista de juegos</h2>
+                    <div class="row-form-register">
+                        <input type="text" id="nameGame" name="name" placeholder="nombre del juego">
+                        <input type="text" id="typeGame" name="name" placeholder="tipo de juego">
+                        <input type="text" id="descriptionGame"  name="descripcion" placeholder="descripcion" >
+                        <input type="hidden" id="indexForm">
+                        <button type="button" id="btnAction" onclick="agregarRegistro()">Agregar</button>
+                        <button type="button" id="Actualizar" onclick="actualizar()">Actualizar</button>
+                        <button type="button" id="Limpiar Cacher" onclick="LimpiarRegistro()">Actualizar</button>
+                        <button type="button" id="Actualizar registros" onclick="ActualizarRegistro()">Actualizar registros</button>
+                    </div>
+                    <div class="buscador-index">
+                        
+                    </div>
                     <div id="estado"></div>
                 </form>
                 <div class="container-column">
                     <div id="listaProducto">
-    
+                        <table class="table">
+                            <thead class="thead">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre</th>
+                                    <th>Edad</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyTable"></tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -47,6 +64,6 @@
         </div>
     </section>
 
-    <script src="index.js" type="text/javascript"></script>
+    <script src="funBotones.js" type="text/javascript"></script>
 </body>
 </html>

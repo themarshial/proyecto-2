@@ -25,11 +25,11 @@ class UI{
 
     resetForm(){
         // document.getElementById('card-center-margin').reset();//este metodo reset resetea el formulario
-        localStorage.removeItem('.card-body');
+        localStorage.clear('card-body');
     }
 }
 
-
+list=[];
 
 const buttonAgregar = document.getElementById('Agregar').addEventListener('click',(e)=>{
     const  text= document.getElementById('inputJuegos').value;
@@ -48,10 +48,10 @@ const buttonAgregar = document.getElementById('Agregar').addEventListener('click
 });
 
 
-const eliminarFila = document.getElementById('product-list'.addEventListener('click',(e)=>{
+const eliminarFila = document.getElementById('listaProducto').addEventListener('click',(e)=>{
     const ui = new UI();
     ui.resetForm(e.target);
-}));
+});
 
 
 // const text= document.getElementById('inputJuegos');
