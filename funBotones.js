@@ -69,11 +69,11 @@ const clearForm= ()=>{
 const validacion = (newGame)=>{
     const {name, type, description} = newGame;
     (name !=='' && type !== '' && description !== '') ? alert(`Nombre: ${name} Tipo: ${type} Descripcion: ${description}`) : alert('campo esta vacio, reviselo!!') ;
-    if(name ===''){
+    if(!name || !type || !description){
         return false;
-    }else{
-        return true;
     }
+    return true;
+    
 };
 
 const search = (index)=>{
@@ -88,8 +88,18 @@ const search = (index)=>{
 }
 const deleteItem = (index)=>{
     let listProd = JSON.parse(localStorage.getItem('listProduct'));
-    console.log('index: ',index," ", listProd[index]);
-
+    // console.log('index: ',index," ", listProd[index]);
+    // // listProd[index]="";
+    // console.log('index: ',index," ", listProd[index]);
+    // localStorage.removeItem(listProd[index]);
+    console.log(listProd,index);
+    const filtrado = listProd.filter((item , i ) => {
+       return i !== index;
+    });
+    console.log(filtrado);
+    localStorage.setItem('listProduct',JSON.stringify(filtrado));
+    clearForm();
+    showTable();
 
 }
 
