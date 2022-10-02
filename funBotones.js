@@ -13,12 +13,25 @@ const agregarRegistro= ()=>{
     }
     // validacion(newGame);
     console.log("validcaion: ",validacion(newGame));
-    //////////////crea un nuevo elemento
     if(validacion(newGame)){
         let listProd = JSON.parse(localStorage.getItem('listProduct'));
-        listProd === null ? listProd=[]: console.log('ya tienes un registro guardado');
-        listProd.push(newGame);
-        localStorage.setItem('listProduct',JSON.stringify(listProd));
+        if(indexForm.value === ''){
+            //////////////crea un nuevo elemento
+            listProd === null ? listProd=[]: console.log('ya tienes un registro guardado');
+            listProd.push(newGame);
+            localStorage.setItem('listProduct',JSON.stringify(listProd));
+        }else{
+            console.log('editar');
+            // if (indexForm.value === null) {
+            //     console.log('es nuuuulll');
+            // }
+            console.log(indexForm.value);
+            listProd[indexForm.value].name = nameGame.value;
+            listProd[indexForm.value].type = typeGame.value;
+            listProd[indexForm.value].description = descriptionGame.value;
+            document.getElementById('btnAction').innerText='Agregar';
+            localStorage.setItem('listProduct',JSON.stringify(listProd));
+        }
        clearForm();
        showTable();
     }
@@ -50,6 +63,7 @@ const clearForm= ()=>{
     nameGame.value='';
     typeGame.value='';
     descriptionGame.value='';
+    indexForm.value='';
 }
 
 const validacion = (newGame)=>{
@@ -69,11 +83,13 @@ const search = (index)=>{
     typeGame.value = listProd[index].type;
     descriptionGame.value = listProd[index].description;
     indexForm.value = index;
-
+    
     document.getElementById('btnAction').innerText='Editar';
 }
 const deleteItem = (index)=>{
-    console.log(index);
+    let listProd = JSON.parse(localStorage.getItem('listProduct'));
+    console.log('index: ',index," ", listProd[index]);
+
 
 }
 
